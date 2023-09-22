@@ -1,8 +1,13 @@
-# React + Vite
+# 基于GSAP ScrollTrigger实现 awesome 3D动画网页
+## 项目介绍
+- GridAnimation基于 React + Vite 搭建 
+- 主要用gsap和ScrollTrigger显示滚动时3D网格动画效果 
+- 灵感来自于 [Inflection](https://inflection.xyz/) [onScroll3d](https://github.com/codrops/Scroll3DGrid/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 启动
+  ```zsh
+   git clone https://github.com/601odd/RsapScroll3DGrid.git
+   cd RsapScroll3DGrid
+   npm i
+   npm run dev
+   ```
