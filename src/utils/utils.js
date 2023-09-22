@@ -54,7 +54,6 @@ const initSmoothScrolling = () => {
 	}
 	// 启用动画帧
 	requestAnimationFrame(scrollFn)
-	console.log(ScrollTrigger)
 }
 
 //根据不同的动画类型，在网格（grid）元素上应用滚动触发的动画效果
@@ -65,7 +64,6 @@ const applyAnimation = (grid, animationType) => {
 	const gridItemsInner = [...gridItems].map(item => item.querySelector('.grid__item-inner'))
 
 	// 给ScrollTrigger定义GSAP时间轴
-	console.log(grid, animationType)
 	const timeline = gsap.timeline({
 		defaults: { ease: 'none' }, //默认的缓动函数为"none"
 		scrollTrigger: {
