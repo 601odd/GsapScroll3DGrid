@@ -3,8 +3,11 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"homepage": "https://gitname.github.io/RsapScroll3DGrid",
 	"scripts": {
 		"dev": "vite",
+		"predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
 		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
