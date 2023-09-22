@@ -1,10 +1,8 @@
 import { gsap } from 'gsap'
-
-const chooseAnimation = (animationType, grid, gridRef) => {
+export const chooseAnimation = (animationType, grid) => {
 	const gridWrap = grid.querySelector('.grid-wrap')
 	const gridItems = grid.querySelectorAll('.grid__item')
 	const gridItemsInner = [...gridItems].map(item => item.querySelector('.grid__item-inner'))
-
 	const timeline = gsap.timeline({
 		defaults: { ease: 'none' }, //默认的缓动函数为"none"
 		scrollTrigger: {
@@ -16,9 +14,8 @@ const chooseAnimation = (animationType, grid, gridRef) => {
 	})
 	switch (animationType) {
 		case 'grid--1':
-			console.log(gridRef)
-			gridRef.current.style.setProperty('--perspective', '1000px')
-			gridRef.current.style.setProperty('--grid-inner-scale', '0.5')
+			grid.style.setProperty('--perspective', '1000px')
+			grid.style.setProperty('--grid-inner-scale', '0.5')
 			timeline
 				.set(gridWrap, {
 					rotationY: 25,
@@ -245,11 +242,11 @@ const chooseAnimation = (animationType, grid, gridRef) => {
 				)
 			break
 		case 'grid--6':
-			// grid.style.setProperty('--perspective', '2500px')
-			// grid.style.setProperty('--grid-width', '100%')
-			// grid.style.setProperty('--grid-gap', '6')
-			// grid.style.setProperty('--grid-columns', '3')
-			// grid.style.setProperty('--grid-item-ratio', '1')
+			grid.style.setProperty('--perspective', '2500px')
+			grid.style.setProperty('--grid-width', '100%')
+			grid.style.setProperty('--grid-gap', '6')
+			grid.style.setProperty('--grid-columns', '3')
+			grid.style.setProperty('--grid-item-ratio', '1')
 
 			timeline.fromTo(
 				gridItems,
@@ -306,4 +303,3 @@ const getGrid = selector => {
 	elements.refresh()
 	return elements
 }
-export default chooseAnimation

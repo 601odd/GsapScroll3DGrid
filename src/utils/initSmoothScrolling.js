@@ -1,7 +1,7 @@
 import Lenis from '@studio-freight/lenis'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const initSmoothScrolling = () => {
+export const initSmoothScrolling = () => {
 	const lenis = new Lenis({
 		lerp: 0.1, // 值越小平滑效果越明显
 		smoothWheel: true, // 为鼠标滚轮事件启用平滑滚动
@@ -16,4 +16,3 @@ const initSmoothScrolling = () => {
 	// 启用动画帧
 	requestAnimationFrame(scrollFn)
 }
-export default initSmoothScrolling

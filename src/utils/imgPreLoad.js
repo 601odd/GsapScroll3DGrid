@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function useImagePreloader() {
+export const useImagePreloader = () => {
 	const [images, setImages] = useState([])
 
 	useEffect(() => {
@@ -32,5 +32,3 @@ function useImagePreloader() {
 
 	return images
 }
-
-export default useImagePreloader
