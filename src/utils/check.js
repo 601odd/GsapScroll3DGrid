@@ -1,5 +1,5 @@
 //检测浏览器是否支持 CSS 变量
-export const supportsCssVars = function () {
+const supportsCssVars = function () {
 	document.documentElement.className = 'js'
 	let temp = document.createElement('style')
 	temp.innerHTML = 'root: { --tmp-var: bold; }'
@@ -12,3 +12,4 @@ export const supportsCssVars = function () {
 	temp.parentNode.removeChild(temp)
 	return isSupport
 }
+export default supportsCssVars
