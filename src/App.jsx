@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react'
 import initSmoothScrolling from './utils/initSmoothScrolling'
 import useImagePreloader from './utils/imgPreLoad'
-<<<<<<< Updated upstream
-import { supportsCssVars } from './utils/check'
-=======
 import supportsCssVars from './utils/check'
 import GridAnimation from './component/GridAnimation'
 import gridAnimationConfig from './const'
->>>>>>> Stashed changes
 import './style/index.less'
 function App() {
 	const [loading, setLoading] = useState(true)
@@ -32,27 +28,9 @@ function App() {
 					</h1>
 					<span className="intro__info">Scroll moderately to fully experience the animations</span>
 				</div>
-<<<<<<< Updated upstream
-				<section className="content">
-					<div className="grid grid--1">
-						<div className="grid-wrap">
-							{images.map((item, index) => (
-								<div className="grid__item" key={index}>
-									<img className="grid__item-inner" src={item.src} />
-								</div>
-							))}
-						</div>
-						<h3 className="content__title content__title--right content__title--top">
-							{'Fleeting moments,'} <br />
-							{`existence's dance.`}
-						</h3>
-					</div>
-				</section>
-=======
 				{gridAnimationConfig.map((item, index) => (
 					<GridAnimation key={index} {...item} images={images} />
 				))}
->>>>>>> Stashed changes
 			</main>
 		</div>
 	)
