@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from 'react'
 import { initSmoothScrolling, useImagePreloader, supportsCssVars, chooseAnimation } from './utils'
 import gridAnimationConfig from './const'
 import './style/index.less'
-function App() {
+function GridAnimation() {
 	const [loading, setLoading] = useState(true)
 	const images = useImagePreloader()
 	useLayoutEffect(() => {
@@ -46,4 +46,4 @@ function App() {
 		</div>
 	)
 }
-export default App
+export default GridAnimation

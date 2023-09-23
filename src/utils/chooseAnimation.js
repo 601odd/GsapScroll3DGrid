@@ -1,4 +1,5 @@
 import { gsap } from 'gsap'
+
 export const chooseAnimation = (animationType, grid) => {
 	const gridWrap = grid.querySelector('.grid-wrap')
 	const gridItems = grid.querySelectorAll('.grid__item')
@@ -12,6 +13,7 @@ export const chooseAnimation = (animationType, grid) => {
 			scrub: true,
 		},
 	})
+	
 	switch (animationType) {
 		case 'grid--1':
 			grid.style.setProperty('--perspective', '1000px')
@@ -44,7 +46,8 @@ export const chooseAnimation = (animationType, grid) => {
 					0
 				)
 			break
-		case 'grid--2':
+		
+			case 'grid--2':
 			grid.style.setProperty('--grid-width', '160%')
 			grid.style.setProperty('--perspective', '2000px')
 			grid.style.setProperty('--grid-inner-scale', '0.5')
