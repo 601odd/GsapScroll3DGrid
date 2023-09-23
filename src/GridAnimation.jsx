@@ -6,26 +6,16 @@ function App() {
 	const [loading, setLoading] = useState(true)
 	const images = useImagePreloader()
 	useLayoutEffect(() => {
-		setTimeout(() => {
+		const animateGrids = async () => {
 			supportsCssVars() || alert('请在支持CSS变量的现代浏览器中查看此演示')
 			initSmoothScrolling()
 			const grids = document.querySelectorAll('.grid')
-			grids.forEach((grid, i) => {
-				chooseAnimation(`grid--${i + 1}`, grid)
-			})
+			const promises = Array.from(grids).map((grid, i) => chooseAnimation(`grid--${i + 1}`, grid))
+			await Promise.all(promises)
 			setLoading(false)
-		}, 2000)
-
-		// const animateGrids = async () => {
-		// 	supportsCssVars() || alert('请在支持CSS变量的现代浏览器中查看此演示')
-		// 	initSmoothScrolling()
-		// 	const grids = document.querySelectorAll('.grid')
-		// 	const promises = Array.from(grids).map((grid, i) => chooseAnimation(`grid--${i + 1}`, grid))
-		// 	await Promise.all(promises)
-		// 	setLoading(false)
-		// }
-		// animateGrids()
-	}, [])
+		}
+		animateGrids()
+	}, [images])
 	if (loading || !images.length) return <div className="loading"></div>
 	return (
 		<div>
