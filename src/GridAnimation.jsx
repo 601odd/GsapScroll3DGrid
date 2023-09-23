@@ -1,11 +1,7 @@
 import { useLayoutEffect, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initSmoothScrolling, useImagePreloader, supportsCssVars, chooseAnimation } from './utils'
 import gridAnimationConfig from './const'
 import './style/index.less'
-gsap.registerPlugin(ScrollTrigger)
-
 function App() {
 	const [loading, setLoading] = useState(true)
 	const images = useImagePreloader()
@@ -18,9 +14,18 @@ function App() {
 				chooseAnimation(`grid--${i + 1}`, grid)
 			})
 			setLoading(false)
-		}, 1000)
-	}, [])
+		}, 2000)
 
+		// const animateGrids = async () => {
+		// 	supportsCssVars() || alert('请在支持CSS变量的现代浏览器中查看此演示')
+		// 	initSmoothScrolling()
+		// 	const grids = document.querySelectorAll('.grid')
+		// 	const promises = Array.from(grids).map((grid, i) => chooseAnimation(`grid--${i + 1}`, grid))
+		// 	await Promise.all(promises)
+		// 	setLoading(false)
+		// }
+		// animateGrids()
+	}, [])
 	if (loading || !images.length) return <div className="loading"></div>
 	return (
 		<div>
