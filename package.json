@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://601odd.github.io/RsapScroll3DGrid",
+	"homepage": "https://601odd.github.io/GsapScroll3DGrid",
 	"scripts": {
 		"dev": "vite",
 		"predeploy": "npm run build",

@@ -6,8 +6,8 @@
 
 ## 启动
   ```zsh
-   git clone https://github.com/601odd/RsapScroll3DGrid.git
-   cd RsapScroll3DGrid
+   git clone https://github.com/601odd/GsapScroll3DGrid.git
+   cd GsapScroll3DGrid
    npm i
    npm run dev
    ```
